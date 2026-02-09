@@ -1,5 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins, Roboto } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import MobileSidebar from "@/components/MobileSidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -8,6 +12,18 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -20,9 +36,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${poppins.variable} ${roboto.variable} ${geistMono.variable} antialiased bg-slate-50`}
       >
-        {children}
+        <SidebarProvider defaultOpen= {false}>
+          <div className="min-h-screen">
+            <MobileSidebar />
+
+            <main className="flex-1">
+              <Navbar />
+              {children}
+              <Footer />
+            </main>
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );
