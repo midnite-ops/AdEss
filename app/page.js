@@ -8,11 +8,11 @@ export default function Home() {
     { 
       name: "Commercial construction and development", 
       description: "Design and construction of infrastructure projects.",
-      icon: HomeIcon
+      icon: ToolCaseIcon
     },
     { 
       name: "Residential projects from conception to completion", description: "Creating functional and aesthetically pleasing buildings.",
-      icon: ToolCaseIcon
+      icon: HomeIcon
     },
     { 
       name: "Infrastructure and industrial construction", 
