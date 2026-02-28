@@ -58,7 +58,7 @@ export default function Home() {
           <div className="flex-1">
             <p>
               AdEss Global Construction &amp; Consultant Services, LLC is a rapidly growing construction
-              and consulting firm based in Houston, Texas, committed to delivering exceptional quality and
+              and consulting firm based in Houston, Texas and liberia, West Africa. Committed to delivering exceptional quality and
               innovation in every project we undertake. With over 15 years of industry experience, we
               specialize in a wide range of services, including civil and architectural engineering, construction
               and project management, environmental assessments, traffic analysis, monitoring and evaluation,

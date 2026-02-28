@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${poppins.variable} ${roboto.variable} ${geistMono.variable} antialiased bg-slate-50`}
       >
         <SidebarProvider defaultOpen= {false}>
-          <div className="min-h-screen">
+          <div className="min-h-screen w-full">
             <MobileSidebar />
 
             <main className="flex-1">
