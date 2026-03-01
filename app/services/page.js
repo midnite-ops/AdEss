@@ -77,8 +77,8 @@ export default function page() {
         </div>
 
         <div className="spacing">
-            <div className="flex gap-5 items-center md:gap-0 md:flex-row flex-col w-full justify-between mb-10">
-                <h1 className="heading w-1/2">Ready to Start Your Dream Project?</h1>
+            <div className="flex gap-5 md:items-center md:gap-0 md:flex-row flex-col w-full justify-between mb-10">
+                <h1 className="heading md:w-1/2 w-full">Ready to Start Your Dream Project?</h1>
                 <p className="md:w-2/5 w-full font-semibold">Let’s turn your vision into a solid, lasting structure. Contact our team today for a consultation and detailed project estimate.</p>
             </div>
             <div>

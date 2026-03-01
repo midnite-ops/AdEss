@@ -1,5 +1,5 @@
 "use client"
-import { Anchor, BadgeCheck, CircleQuestionMark, Home, HomeIcon, X } from 'lucide-react'
+import { Anchor, BadgeCheck, Contact, Home,  X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { useSidebar } from "@/components/ui/sidebar"
 import { 
@@ -33,7 +33,7 @@ const menu = [
   {
     title: 'Contact Us',
     url: '/contact',
-    icon: CircleQuestionMark
+    icon: Contact
   }
 ]
 
