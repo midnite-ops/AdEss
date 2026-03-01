@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 export default function page() {
 
   return (
@@ -15,7 +15,10 @@ export default function page() {
 
         <div className="text-white relative z-20">
           <h1 className="heading">ABOUT US</h1>
-          <button className=" mt-8 py-2 px-4 md:px-6 md:py-3 bg-white text-black font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors">Contact Us</button>
+          <button className=" mt-8 py-2 px-4 md:px-6 md:py-3 bg-white text-black font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors">
+            <Link href='/contact'>Contact Us</Link>
+            
+          </button>
         </div>
         
       </div>
