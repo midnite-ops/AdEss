@@ -23,7 +23,7 @@ export default function page() {
       <div className="flex flex-col gap-20 w-full spacing">
         <div className="vision ">
           <div className="flex-col md:flex-row flex gap-10 mt-6">
-            <div className="md:w-1/2 w-full">
+            <div className=" w-full">
               <h1 className="smallheading ">/OUR VISION</h1>
               <p className="font-medium mt-2 leading-relaxed">
                 To provide innovative,
@@ -36,7 +36,7 @@ export default function page() {
               </p>
             </div>
 
-            <div className="mb-2 md:w-1/2 w-full">
+            <div className="mb-2  w-full">
               <h1 className="smallheading">Core Goals</h1>
               <ul className="font-semibold flex flex-col mt-2 gap-3">
                 <li>
@@ -66,8 +66,8 @@ export default function page() {
         </div>
 
         <div className="mission">
-          <div className="flex flex-col md:flex-row gap-10 mt-6">
-            <div className="md:w-1/2 w-full">
+          <div className="flex justify-between flex-col md:flex-row gap-10 mt-6">
+            <div className=" w-full">
               <h1 className="smallheading">/OUR MISSION</h1>
               <p className="font-medium mt-2 ">To be a global leader in engineering and consultancy, known for delivering innovative solutions that transform industries
               and communities. We aim to be the trusted partner of choice, renowned for our commitment to
@@ -76,7 +76,7 @@ export default function page() {
               change and contribute to a better, more sustainable world.</p>
             </div>
 
-            <div className="core-goals">
+            <div className="core-goals w-full">
               <h1 className="smallheading">How we deliver</h1>
               <ul className="font-semibold flex flex-col mt-6 gap-6 ">
                 <li>
