@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem,AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link"
 function FAQ(){
     const faq = [
         {
@@ -48,6 +49,7 @@ function FAQ(){
                                     <p className="text-start text-black ">
                                         {item.answer}
                                     </p>
+                                    {index === faq.length - 1 ? <Link href={'/contact'} className="mt-5 self-start border rounded-md py-2 px-5 text-black">Contact Us</Link> : ''}
                                 </div>
                             </AccordionContent>
                         </AccordionItem>  

@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 export default function page() {
 
   return (
     <div className=" w-full " >
       <div className="relative md:h-80 px-5 md:px-10 py-10 md:py-0 flex items-center ">
+        <Navbar isHero={true}/>
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -27,7 +29,7 @@ export default function page() {
         <div className="vision ">
           <div className="flex-col md:flex-row flex gap-10 mt-6">
             <div className=" w-full">
-              <h1 className="smallheading ">/OUR VISION</h1>
+              <h1 className="smallheading ">OUR VISION</h1>
               <p className="font-medium mt-2 leading-relaxed">
                 To provide innovative,
                 reliable, and sustainable engineering solutions that drive progress and create value for our
@@ -43,16 +45,16 @@ export default function page() {
               <h1 className="smallheading">Core Goals</h1>
               <ul className="font-semibold flex flex-col mt-2 gap-3">
                 <li>
-                  ✔ Real Estate Leadership: Become the most trusted name in
+                  Real Estate Leadership: Become the most trusted name in
                   luxury and affordable housing across the industry.
                 </li>
 
                 <li>
-                  ✔ Global Expansion: Grow our multinational footprint through
+                  Global Expansion: Grow our multinational footprint through
                   strategic subsidiaries.
                 </li>
                 <li>
-                  ✔ Job Creation: Generate 10,000+ employment opportunities by
+                  Job Creation: Generate 10,000+ employment opportunities by
                   2030.
                 </li>
               </ul>
@@ -71,7 +73,7 @@ export default function page() {
         <div className="mission">
           <div className="flex justify-between flex-col md:flex-row gap-10 mt-6">
             <div className=" w-full">
-              <h1 className="smallheading">/OUR MISSION</h1>
+              <h1 className="smallheading">OUR MISSION</h1>
               <p className="font-medium mt-2 ">To be a global leader in engineering and consultancy, known for delivering innovative solutions that transform industries
               and communities. We aim to be the trusted partner of choice, renowned for our commitment to
               excellence, sustainability, and cutting-edge technology. By continuously advancing our expertise
@@ -83,17 +85,17 @@ export default function page() {
               <h1 className="smallheading">How we deliver</h1>
               <ul className="font-semibold flex flex-col mt-6 gap-6 ">
                 <li>
-                  ✔ Transparency: Honest deals, clear contracts, no hidden
+                  Transparency: Honest deals, clear contracts, no hidden
                   costs.
                 </li>
 
                 <li>
-                  ✔ Innovation: Cutting-edge tech in property development and
+                  Innovation: Cutting-edge tech in property development and
                   management.
                 </li>
 
                 <li>
-                  ✔ Customer Obsession: Tailored solutions for buyers, sellers,
+                   Customer Obsession: Tailored solutions for buyers, sellers,
                   and investors.
                 </li>
               </ul>

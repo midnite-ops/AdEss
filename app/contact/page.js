@@ -3,12 +3,37 @@ import { useState } from "react"
 import Image from "next/image"
 import { Mail, MessageCircle, Phone } from "lucide-react"
 
+import * as z from 'zod';
+
 export default function page() {
+  //Defining a schema
+  const User = z.object({
+    name: z.string().min(1, 'Please enter your name'),
+    password: z.string().min(8, 'Password must be at least 8 characters'),
+    email: z.string().email('Please enter a valid email address'),
+    message: z.string().min(5, 'Too short')
+  })
+
+  const [errors, setErrors] = useState({})
   const [message, setMessage] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    password: ''
   })
+
+  
+  function submit() {
+
+    const validateUser = User.safeParse(message)
+
+    if(!validateUser.success){
+      setErrors(validateUser.error.flatten().fieldErrors)
+      return
+    }
+
+    setErrors({})
+  }
 
   const contact = [
     {
@@ -39,12 +64,16 @@ export default function page() {
         [name]: value
       }
     ))
+    setErrors((prev) => ({
+      ...prev,
+      [name]: undefined
+    }))
     
   }
-  console.log(message)
   return (
     <section>
       <div className="spacing flex flex-col md:flex-row gap-20">
+        
         <div className="flex-1">
           <h3 className="subheading">Contact</h3>
           <h1 className="heading mb-2">Contact Us</h1>
@@ -56,19 +85,35 @@ export default function page() {
             <label htmlFor="name" className="flex flex-col gap-3 ">
               Name
               <input type="text" name="name" onChange={handleChange} className="border rounded-sm border-black w-full py-3 px-4" placeholder="Name"/>
+              {errors.name && (
+                <p className="text-sm text-red-600 font-bold">{errors.name[0]}</p>
+              )}
             </label>
 
             <label htmlFor="email"  className="flex flex-col gap-3 ">
               Email
               <input type="text" name="email" onChange={handleChange} className="border rounded-sm border-black w-full py-3 px-4" placeholder="Email"/>
+              {errors.email && (
+                <p className="text-sm text-red-600 font-bold">{errors.email[0]}</p>
+              )}
+            </label>
+            <label htmlFor="password"  className="flex flex-col gap-3 ">
+              Password
+              <input type="text" name="password" onChange={handleChange} className="border rounded-sm border-black w-full py-3 px-4" placeholder="*********"/>
+              {errors.password && (
+                <p className="text-sm text-red-600 font-bold">{errors.password[0]}</p>
+              )}
             </label>
 
             <label htmlFor="message" className="flex flex-col justify-end gap-3 ">
               Message
               <textarea type="text" name="message" onChange={handleChange} className="border rounded-sm border-black w-full py-3  px-4 h-50 resize-none" placeholder="Type your message"/>
+              {errors.message && (
+                <p className="text-sm text-red-600 font-bold">{errors.message[0]}</p>
+              )}
             </label>
 
-            <button className="self-start bg-black text-white py-2 mt-5 px-4 md:px-6 md:py- font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors">Submit</button>
+            <button type="button" className="self-start bg-black text-white py-2 mt-5 px-4 md:px-6 md:py- font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors" onClick={submit}>Submit</button>
           </form>
         </div>
         <div className="flex-1">
