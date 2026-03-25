@@ -240,7 +240,7 @@ function SidebarTrigger({
         toggleSidebar()
       }}
       {...props}>
-      <MenuIcon className="h-7! w-7!" />
+      <MenuIcon className="h-6! w-6! bg-transparent!" />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );

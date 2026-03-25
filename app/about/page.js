@@ -4,7 +4,7 @@ export default function page() {
 
   return (
     <div className=" w-full " >
-      <div className="relative md:h-80 px-5 md:px-10 py-10 md:py-0 flex items-center ">
+      <div className="relative h-90 px-5 md:px-10 py-10 md:py-0 flex items-center ">
         <Navbar isHero={true}/>
         {/* Background image */}
         <div

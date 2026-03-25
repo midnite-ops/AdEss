@@ -32,8 +32,9 @@ export default function Navbar({isHero = false}) {
       py-5 px-10 md:px-20 flex justify-between items-center transition-all duration-300 z-50
       ${isHero 
         ? `text-white fixed w-full top-0 left-0 ${isScrolled ? 'bg-white backdrop-blur-md shadow-lg text-black!' : 'bg-transparent'}`
-        : 'bg-white shadow-md fixed w-full top-0 left-0 text-gray-900'
+        : 'bg-white shadow-md sticky w-full top-0  text-gray-900'
       }
+      ${isScrolled ? 'shadow-md' : ''}
     `}>
       {/* Logo - white for hero, blue for regular pages */}
       <Link href="/">
@@ -71,8 +72,7 @@ export default function Navbar({isHero = false}) {
       </Link>
 
       {/* Mobile menu trigger */}
-      <SidebarTrigger className={`lg:hidden transition ${isHero ? 'bg-white/10 hover:bg-white/20' : 'bg-transparent hover:bg-gray-100'}`}>
-        <MenuIcon className='h-6 w-6'/>
+      <SidebarTrigger className={`lg:hidden transition ${isHero ? ' hover:bg-white/20' : 'bg-transparent hover:bg-gray-100'}`}>
       </SidebarTrigger>
 
       {/* Desktop nav links */}

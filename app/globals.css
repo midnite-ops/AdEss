@@ -72,6 +72,9 @@
   .heading{
     @apply md:text-5xl font-semibold text-4xl leading-tight font-poppins 
   }
+  .lib-heading{
+    @apply font-semibold text-4xl leading-tight font-poppins 
+  }
   .smallheading{
     @apply md:text-[30px] text-xl font-medium
   }
