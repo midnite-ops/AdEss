@@ -1,6 +1,10 @@
-
+"use client"
+import { usePathname } from 'next/navigation';
 import { FacebookIcon, InstagramIcon,YoutubeIcon } from 'lucide-react';
 export default function Footer() {
+    const path  = usePathname()
+    console.log(path)
+
   return (
     <footer className='padded bg-primary spacing text-white'>
         <div className='flex flex-col gap-20'>

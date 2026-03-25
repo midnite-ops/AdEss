@@ -1,6 +1,9 @@
 import FAQ from "@/components/FAQ";
+import Navbar from "@/components/Navbar";
 import { HomeIcon, ToolCaseIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function Home() {
 
@@ -22,9 +25,9 @@ export default function Home() {
   ];
   return (
     <main>
-
       <section className="relative h-screen">
         {/* Background image */}
+        <Navbar isHero={true}/>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/hero-bg.jpg')" }}
@@ -43,8 +46,9 @@ export default function Home() {
               Delivering durable and innovative structures with precision and integrity, we transform visions into reality, creating spaces that inspire, endure, and elevate communities.
             </p>
           </div>
+
+          <Link href={'/contact'} className="mt-8 px-6 py-3 bg-white text-black font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors ">Contact Us</Link>
           
-          <button className="mt-8 px-6 py-3 bg-white text-black font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors ">Contact Us</button>
         </div>
       </section>
 
@@ -58,14 +62,17 @@ export default function Home() {
           <div className="flex-1">
             <p>
               AdEss Global Construction &amp; Consultant Services, LLC is a rapidly growing construction
-              and consulting firm based in Houston, Texas and liberia, West Africa. Committed to delivering exceptional quality and
+              and consulting firm based in Houston, Texas and Liberia, West Africa. Committed to delivering exceptional quality and
               innovation in every project we undertake. With over 15 years of industry experience, we
               specialize in a wide range of services, including civil and architectural engineering, construction
               and project management, environmental assessments, traffic analysis, monitoring and evaluation,
               and safety assessments. We also provide strategic consulting services tailored to meet the unique
               needs of our clients. Safety is our top priority—for both our team and our clients.
             </p>
-            <button className="mt-5 border rounded-md py-2 px-5">Learn More</button>
+            
+            <button className="mt-5 border rounded-md py-2 px-5">
+              <Link href={'/about'}>Learn More</Link>
+            </button>
           </div>
         </div>
       </section>
@@ -94,7 +101,8 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <h1 className="heading text-center mb-3">Ready to build something real?</h1>
           <p className="text-center">Let's talk about your project and what it needs to succeed</p>
-          <button className="mt-5 border rounded-md py-2 px-5 bg-primary text-white">Contact Us</button>
+          <Link className="mt-5 border rounded-md py-2 px-5 bg-primary text-white" href={'/contact'}>Contact Us</Link>
+          
         </div>
         <div>
           <Image src="/cta/img-3.jpg" alt="Contact Us" width={800} height={400} className="mt-10 rounded-md w-full" />
