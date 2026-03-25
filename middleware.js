@@ -14,7 +14,8 @@ export function middleware(request) {
   }
 
   if (resolvedCountry === 'US') {
-    url.pathname = `/liberia${pathname}`
+    url.pathname = `/${pathname}`
+    // url.pathname = `/liberia${pathname}`
     return NextResponse.rewrite(url)
   }
 

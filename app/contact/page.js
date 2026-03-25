@@ -70,14 +70,14 @@ export default function page() {
     }))
     
   }
-  const countrySelector = (country) => {
-    if(country === 'Liberia'){
-      document.cookie = "preferred-country=LR; path=/; max-age=31536000"
-    }else if(country === 'USA'){
-      document.cookie = "preferred-country=US; path=/; max-age=31536000"
-    }
-    window.location.href = '/'
-  }
+  // const countrySelector = (country) => {
+  //   if(country === 'Liberia'){
+  //     document.cookie = "preferred-country=LR; path=/; max-age=31536000"
+  //   }else if(country === 'USA'){
+  //     document.cookie = "preferred-country=US; path=/; max-age=31536000"
+  //   }
+  //   window.location.href = '/'
+  // }
   return (
     <section>
       <div className="spacing flex flex-col md:flex-row gap-20">
@@ -152,14 +152,14 @@ export default function page() {
             <Image src='/contact/houston.jpg' alt="houston image" width={400} height={400} className="w-full h-full"/>
             <h3 className="subheading">Houston, Texas</h3>
             <p>123 Sample St, Sydney NSW 2000 AU</p>
-            <p className="underline cursor-pointer" onClick={() => countrySelector('USA')}>Get directions</p>
+            <p className="underline cursor-pointer">Get directions</p>
           </div>
 
           <div className="flex flex-col gap-3 flex-1">
             <Image src='/contact/liberia.jpg' alt="liberia image" width={400} height={400} className="w-full h-full"/>
             <h3 className="subheading">Liberia, West Africa</h3>
             <p>123 Sample St, Sydney NSW 2000 AU</p>
-            <p className="underline cursor-pointer" onClick={() => countrySelector('Liberia')}>Get directions</p>
+            <p className="underline cursor-pointer">Get directions</p>
           </div>
         </div>
       </div>
