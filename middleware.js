@@ -1,29 +1,41 @@
 import { NextResponse } from 'next/server'
 
 export function middleware(request) {
-  const country = request.geo?.country || 'US'
   const manualCountry = request.cookies.get('preferred-country')?.value
-  const resolvedCountry = manualCountry || country
 
   const url = request.nextUrl.clone()
   const pathname = url.pathname
 
-  // Don't redirect if user is already on a /liberia page
-  if (pathname.startsWith('/liberia')) {
+  // 🚫 Don't touch static files or internal routes (extra safety)
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
+    pathname === '/favicon.ico'
+  ) {
     return NextResponse.next()
   }
 
-  if (resolvedCountry === 'US') {
-    url.pathname = `/${pathname}`
-    // url.pathname = `/liberia${pathname}`
-    return NextResponse.rewrite(url)
+  // ✅ If user explicitly chose Liberia → ALWAYS route to Liberia
+  if (manualCountry === 'LR') {
+    if (!pathname.startsWith('/liberia')) {
+      url.pathname = `/liberia${pathname}`
+      return NextResponse.rewrite(url)
+    }
   }
 
+  // ✅ If user explicitly chose US → ALWAYS stay on US (root)
+  if (manualCountry === 'US') {
+    if (pathname.startsWith('/liberia')) {
+      url.pathname = pathname.replace('/liberia', '') || '/'
+      return NextResponse.rewrite(url)
+    }
+  }
+  console.log(manualCountry)
+
+  // 🌍 No cookie → DO NOTHING (default = US)
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico).*)',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 }

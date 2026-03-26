@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import MobileSidebar from "@/components/MobileSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import NavbarWrapper from "@/components/NavbarWrapper";
+import CountryPrompt from "@/components/CountryPrompt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${poppins.variable} ${roboto.variable} ${geistMono.variable} antialiased `}
       >
+        <CountryPrompt />
         <SidebarProvider defaultOpen= {false}>
           <div className="min-h-screen w-full">
             <MobileSidebar />

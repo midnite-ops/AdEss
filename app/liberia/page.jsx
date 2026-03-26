@@ -27,7 +27,7 @@ export default function LiberiaHome() {
 
   return (
     <main className="bg-white text-primary ">
-      <Navbar isHero={false} />
+      
 
       {/* ── HERO — full screen, left-aligned ── */}
       <section className="h-auto pt-30">
@@ -99,7 +99,7 @@ export default function LiberiaHome() {
           </p>
           <Link
             href="/liberia/about"
-            className="border border-secondary text-secondary font-poppins font-medium text-sm tracking-widest uppercase px-8 py-3 w-fit hover:bg-secondary hover:text-white transition-colors mt-2"
+            className="border border-secondary text-secondary font-poppins font-medium text-sm tracking-widest uppercase px-8 py-3 w-fit hover:bg-secondary hover:text-black transition-colors mt-2"
           >
             Learn More
           </Link>

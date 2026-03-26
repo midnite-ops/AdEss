@@ -1,92 +1,124 @@
 "use client"
-import { useState, useEffect } from 'react'
+
+import { useState, useEffect } from "react"
 import { SidebarTrigger } from "./ui/sidebar"
-import { MenuIcon } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
-export default function Navbar({isHero = false}) {
+export default function Navbar({ isHero = false }) {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [country, setCountry] = useState(null) // 👈 important
+  const router = useRouter()
 
+  // ✅ Get cookie once
   useEffect(() => {
-    // Only track scroll on hero pages
+    const match = document.cookie.match(/(^| )preferred-country=([^;]+)/)
+    setCountry(match ? match[2] : "US")
+  }, [])
+
+  // ✅ Scroll effect
+  useEffect(() => {
     if (!isHero) return
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
-    
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [isHero])
 
+  // ⛔ Prevent render until country is known (fix flicker)
+  if (!country) return null
+
+  // ✅ Derived values
+  const basePath = country === "LR" ? "/liberia" : ""
+  const switchTo = country === "LR" ? "US" : "LR"
+
+  // ✅ Switch country (fixed)
+  const switchCountry = (target) => {
+    const currentPath = window.location.pathname
+
+    let newPath
+
+    if (target === "LR") {
+      newPath = currentPath.startsWith("/liberia")
+        ? currentPath
+        : `/liberia${currentPath}`
+    } else {
+      newPath = currentPath.replace("/liberia", "") || "/"
+    }
+
+    document.cookie = `preferred-country=${target}; path=/; max-age=31536000`
+
+    router.push(newPath)
+    router.refresh()
+  }
+
+  // ✅ Nav links
   const navLinks = [
-    { name: "Home", href: "/" }, 
-    { name: "About", href: "/about" }, 
-    { name: "Services", href: "/services" }, 
-    { name: "Contact", href: "/contact" }
+    { name: "Home", href: `${basePath}/` },
+    { name: "About", href: `${basePath}/about` },
+    { name: "Services", href: `${basePath}/services` },
+    { name: "Contact", href: `${basePath}/contact` },
   ]
 
   return (
-    <nav className={`
-      py-5 px-10 md:px-20 flex justify-between items-center transition-all duration-300 z-50
-      ${isHero 
-        ? `text-white fixed w-full top-0 left-0 ${isScrolled ? 'bg-white backdrop-blur-md shadow-lg text-black!' : 'bg-transparent'}`
-        : 'bg-white shadow-md sticky w-full top-0  text-gray-900'
-      }
-      ${isScrolled ? 'shadow-md' : ''}
-    `}>
-      {/* Logo - white for hero, blue for regular pages */}
-      <Link href="/">
+    <nav
+      className={`
+        py-5 px-10 md:px-20 flex justify-between items-center transition-all duration-300 z-50
+        ${
+          isHero
+            ? `fixed w-full top-0 left-0 ${
+                isScrolled
+                  ? "bg-white backdrop-blur-md shadow-lg text-black"
+                  : "bg-transparent text-white"
+              }`
+            : "bg-white shadow-md sticky top-0 text-gray-900"
+        }
+      `}
+    >
+      {/* LOGO */}
+      <Link href={basePath || "/"}>
         {isHero ? (
-          // Hero page logo (white)
           isScrolled ? (
-            // Scrolled: Show blue logo
-            <Image 
-              src='/adess-logo-colored.png'  // Blue logo
-              className="cursor-pointer transition-all" 
-              width={100}  // Smaller on scroll
-              height={100} 
-              alt="AdEss logo"
-            />
+            <Image src="/adess-logo-colored.png" width={100} height={100} alt="AdEss logo" />
           ) : (
-            // Not scrolled: Show white logo
-            <Image 
-              src='/adess-logo.png'  // White logo
-              className="cursor-pointer transition-all" 
-              width={100} 
-              height={100} 
-              alt="AdEss logo"
-            />
+            <Image src="/adess-logo.png" width={100} height={100} alt="AdEss logo" />
           )
         ) : (
-          // Regular page: Always show blue logo
-          <Image 
-            src='/adess-logo-colored.png'  // Blue logo
-            className="cursor-pointer transition-all" 
-            width={100} 
-            height={100} 
-            alt="AdEss logo"
-          />
+          <Image src="/adess-logo-colored.png" width={100} height={100} alt="AdEss logo" />
         )}
       </Link>
 
-      {/* Mobile menu trigger */}
-      <SidebarTrigger className={`lg:hidden transition ${isHero ? ' hover:bg-white/20' : 'bg-transparent hover:bg-gray-100'}`}>
-      </SidebarTrigger>
+      {/* MOBILE */}
+      <SidebarTrigger
+        className={`lg:hidden ${
+          isHero ? "hover:bg-white/20" : "hover:bg-gray-100"
+        }`}
+      />
 
-      {/* Desktop nav links */}
-      <ul className="lg:flex gap-10 hidden">
+      {/* DESKTOP */}
+      <ul className="lg:flex gap-10 hidden items-center">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <Link 
-              href={link.href} 
+            <Link
+              href={link.href}
               className="font-roboto hover:opacity-70 transition-opacity"
             >
               {link.name}
             </Link>
           </li>
         ))}
+
+        {/* SWITCH */}
+        <button
+          onClick={() => switchCountry(switchTo)}
+          className="border border-current px-4 py-2 text-xs tracking-widest uppercase hover:bg-black hover:text-white transition"
+        >
+          {switchTo === "LR" ? "🇱🇷 Liberia" : "🇺🇸 USA"}
+        </button>
       </ul>
     </nav>
   )

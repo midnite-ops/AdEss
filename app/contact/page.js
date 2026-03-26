@@ -151,15 +151,11 @@ export default function page() {
           <div className="flex flex-col gap-3 flex-1">
             <Image src='/contact/houston.jpg' alt="houston image" width={400} height={400} className="w-full h-full"/>
             <h3 className="subheading">Houston, Texas</h3>
-            <p>123 Sample St, Sydney NSW 2000 AU</p>
-            <p className="underline cursor-pointer">Get directions</p>
           </div>
 
           <div className="flex flex-col gap-3 flex-1">
             <Image src='/contact/liberia.jpg' alt="liberia image" width={400} height={400} className="w-full h-full"/>
             <h3 className="subheading">Liberia, West Africa</h3>
-            <p>123 Sample St, Sydney NSW 2000 AU</p>
-            <p className="underline cursor-pointer">Get directions</p>
           </div>
         </div>
       </div>
