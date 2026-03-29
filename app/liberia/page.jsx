@@ -10,7 +10,6 @@ export default function LiberiaHome() {
   return (
     <main className="bg-white text-primary ">
       
-
       {/* ── HERO — full screen, left-aligned ── */}
       <section className="h-auto pt-30">
         <div className="mb-15">

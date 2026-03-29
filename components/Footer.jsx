@@ -33,9 +33,9 @@ export default function Footer() {
                         <h3 className='font-poppins text-lg font-medium'>Subscribe to our Newsletter</h3>
                         <label htmlFor="newsletter" className='flex flex-col md:flex-row gap-5 my-3 w-full'>
 
-                            <input type="text" placeholder='Enter your email' className='bg-white text-black w-full h-12 lg:h-auto pl-3 rounded-md pr-20'/>
+                            <input type="text" placeholder='Enter your email' className='bg-white text-black w-full h-12 lg:h-auto pl-3 pr-20'/>
 
-                            <button className='border rounded-md py-2 px-5 '>Subscribe</button>
+                            <button className='border  py-2 px-5 '>Subscribe</button>
 
                         </label>
                         <p className='text-sm '>Building Trust, Engineering Excellence</p>
