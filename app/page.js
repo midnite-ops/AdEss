@@ -105,7 +105,7 @@ export default function Home() {
           
         </div>
         <div>
-          <Image src="/cta/img-3.jpg" alt="Contact Us" width={800} height={400} className="mt-10 rounded-md w-full" />
+          <Image src="/liberia/home/liberia-img-1.jpeg" alt="Contact Us" width={800} height={50} className="mt-10  rounded-md w-full" />
         </div>
       </section>
 
