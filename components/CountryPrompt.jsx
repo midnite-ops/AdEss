@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react"
 
 export default function CountryPrompt() {
-  const [show, setShow] = useState(false)
+  const [showDefault, setShowDefault] = useState(true)
+  console.log(document.cookie)
 
   useEffect(() => {
-    const cookie = document.cookie.includes("preferred-country")
+    const cookie = document.cookie.includes("LR")
     if (!cookie) {
-      setShow(true)
+      setShowDefault(false)
     }
   }, [])
 
@@ -20,7 +21,7 @@ export default function CountryPrompt() {
     window.location.href = path
 }
 
-  if (!show) return null
+  if (showDefault) return null
 
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-primary text-white px-6 py-4 shadow-xl flex items-center gap-4">

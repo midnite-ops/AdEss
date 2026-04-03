@@ -4,100 +4,64 @@ import { useState, useEffect } from "react"
 import { SidebarTrigger } from "./ui/sidebar"
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 
 export default function Navbar({ isHero = false }) {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [country, setCountry] = useState(null) // 👈 important
+  const [country, setCountry] = useState(null)
   const router = useRouter()
+  const pathname = usePathname()
 
-  // ✅ Get cookie once
+  // Get cookie once
   useEffect(() => {
     const match = document.cookie.match(/(^| )preferred-country=([^;]+)/)
     setCountry(match ? match[2] : "US")
   }, [])
 
-  // ✅ Scroll effect
-  useEffect(() => {
-    if (!isHero) return
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [isHero])
-
-  // ⛔ Prevent render until country is known (fix flicker)
+  // Prevent render until country is known
   if (!country) return null
 
-  // ✅ Derived values
-  const basePath = country === "LR" ? "/liberia" : ""
-  const switchTo = country === "LR" ? "US" : "LR"
+  // Determine current location and base path
+  const isOnLiberia = pathname.startsWith('/liberia')
+  const basePath = isOnLiberia ? "/liberia" : ""
+  const switchTo = isOnLiberia ? "US" : "LR"
 
-  // ✅ Switch country (fixed)
+  // Switch country - SIMPLIFIED
   const switchCountry = (target) => {
-    const currentPath = window.location.pathname
+    // Get the clean path (without /liberia)
+    let cleanPath = pathname.replace('/liberia', '') || '/'
 
-    let newPath
+    // Build new path
+    const newPath = target === "LR" ? `/liberia${cleanPath}` : cleanPath
 
-    if (target === "LR") {
-      newPath = currentPath.startsWith("/liberia")
-        ? currentPath
-        : `/liberia${currentPath}`
-    } else {
-      newPath = currentPath.replace("/liberia", "") || "/"
-    }
-
+    // Set cookie
     document.cookie = `preferred-country=${target}; path=/; max-age=31536000`
 
-    router.push(newPath)
-    router.refresh()
+    // Navigate
+    window.location.href = newPath  // Use window.location for full reload
   }
 
-  // ✅ Nav links
+  // Nav links
   const navLinks = [
-    { name: "Home", href: `${basePath}/` },
+    { name: "Home", href: basePath || "/" },
     { name: "About", href: `${basePath}/about` },
     { name: "Services", href: `${basePath}/services` },
     { name: "Contact", href: `${basePath}/contact` },
   ]
 
   return (
-    <nav
-      className={`
-        py-5 px-10 md:px-20 flex justify-between items-center transition-all duration-300 z-50
-        ${
-          isHero
-            ? `fixed w-full top-0 left-0 ${
-                isScrolled
-                  ? "bg-white backdrop-blur-md shadow-lg text-black"
-                  : "bg-transparent text-white"
-              }`
-            : "bg-white shadow-md sticky top-0 text-gray-900"
-        }
-      `}
-    >
+    <nav className="py-5 px-10 md:px-20 flex justify-between items-center transition-all duration-300 z-50 sticky w-full top-0 left-0 backdrop-blur-md shadow-lg text-black bg-white">
       {/* LOGO */}
       <Link href={basePath || "/"}>
-        {isHero ? (
-          isScrolled ? (
-            <Image src="/adess-logo-colored.png" width={100} height={100} alt="AdEss logo" />
-          ) : (
-            <Image src="/adess-logo.png" width={100} height={100} alt="AdEss logo" />
-          )
-        ) : (
-          <Image src="/adess-logo-colored.png" width={100} height={100} alt="AdEss logo" />
-        )}
+        <Image 
+          src="/adess-logo-colored.png" 
+          width={100} 
+          height={100} 
+          alt="AdEss logo" 
+        />
       </Link>
 
       {/* MOBILE */}
-      <SidebarTrigger
-        className={`lg:hidden ${
-          isHero ? "hover:bg-white/20" : "hover:bg-gray-100"
-        }`}
-      />
+      <SidebarTrigger className='lg:hidden hover:bg-gray-100' />
 
       {/* DESKTOP */}
       <ul className="lg:flex gap-10 hidden items-center">

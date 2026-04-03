@@ -3,8 +3,9 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import MobileSidebar from "@/components/MobileSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import NavbarWrapper from "@/components/NavbarWrapper";
-import CountryPrompt from "@/components/CountryPrompt";
+// import NavbarWrapper from "@/components/NavbarWrapper";
+import Navbar from "@/components/Navbar";
+// import CountryPrompt from "@/components/CountryPrompt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ export const metadata = {
   title: "AdEss Construction",
   description: "Building excellence across regions",
   icons: {
-    icon: "/adess-favi.svg", // 👈 your icon
+    icon: "/adess-favicon.svg", // 👈 your icon
   },
   openGraph: {
     title: "AdEss Construction",
@@ -59,11 +60,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${poppins.variable} ${roboto.variable} ${geistMono.variable} antialiased `}
       >
-        <CountryPrompt />
+        {/* <CountryPrompt /> */}
         <SidebarProvider defaultOpen= {false}>
           <div className="min-h-screen w-full">
             <MobileSidebar />
-            <NavbarWrapper/>
+            {/* <NavbarWrapper/> */}
+            <Navbar />
             <main className="flex-1">
               {children}
               <Footer />

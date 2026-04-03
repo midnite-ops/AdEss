@@ -27,7 +27,7 @@ export default function Home() {
     <main>
       <section className="relative h-screen">
         {/* Background image */}
-        <Navbar isHero={true}/>
+       
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/hero-bg.jpg')" }}

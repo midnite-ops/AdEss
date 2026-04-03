@@ -29,7 +29,7 @@ export default function page() {
     ]
   return (
     <main>
-        <section className=" h-screen spacing flex flex-col gap-10 lg:gap-0 lg:flex-row ">
+        <section className=" h-screen spacing flex flex-col gap-10 lg:gap-0 lg:flex-row pt-0 ">
             <div className="flex flex-col gap-3 md:flex-1 items-start justify-start md:justify-center">
                 <h1 className="heading  md:max-w-10/12">Bulding what matters, done right</h1>
                 <p className="w-full md:w-3/4">We build structures that last. From foundation to finish, AdEss delivers quality construction with precision and integrity.</p>
