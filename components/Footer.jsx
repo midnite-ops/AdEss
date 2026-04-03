@@ -1,6 +1,7 @@
 "use client"
 import { usePathname } from 'next/navigation';
 import { FacebookIcon, InstagramIcon,YoutubeIcon } from 'lucide-react';
+import Link from 'next/link';
 export default function Footer() {
     const path  = usePathname()
     console.log(path)
@@ -17,13 +18,13 @@ export default function Footer() {
                     
                     <ul className='flex p-0 gap-4 flex-col lg:flex-row '>
                         <li>
-                            <a href="">About Us</a>
+                            <Link href={'/about'}>About Us</Link>
                         </li>
                         <li>
-                            <a href="">Our Services</a>
+                            <Link href={'/services'}>Our Services</Link>
                         </li>
                         <li>
-                            <a href="">Contact Us</a>
+                            <Link href={'/contact'}>Contact Us</Link>
                         </li>
                     </ul>
                 </div>
@@ -32,9 +33,9 @@ export default function Footer() {
                         <h3 className='font-poppins text-lg font-medium'>Subscribe to our Newsletter</h3>
                         <label htmlFor="newsletter" className='flex flex-col md:flex-row gap-5 my-3 w-full'>
 
-                            <input type="text" placeholder='Enter your email' className='bg-white text-black w-full h-12 lg:h-auto pl-3 rounded-md pr-20'/>
+                            <input type="text" placeholder='Enter your email' className='bg-white text-black w-full h-12 lg:h-auto pl-3 pr-20'/>
 
-                            <button className='border rounded-md py-2 px-5 '>Subscribe</button>
+                            <button className='border  py-2 px-5 '>Subscribe</button>
 
                         </label>
                         <p className='text-sm '>Building Trust, Engineering Excellence</p>
@@ -43,8 +44,14 @@ export default function Footer() {
             </div>
             <div className='border-t border-t-white flex lg:justify-between lg:items-center flex-col lg:flex-row pt-8 gap-y-8'>
                 <div className='flex gap-3'>
-                    <InstagramIcon size={30} className='text-white hover:cursor-pointer'/>
-                    <FacebookIcon size={30} className='text-white hover:cursor-pointer'/>
+                    <Link href={'https://www.facebook.com/share/1G4YBBHw6J/?mibextid=wwXIfr'} target='_blank'>
+                        <FacebookIcon size={30} className='text-white hover:cursor-pointer'/>
+                    </Link>
+
+                    <Link href={'https://www.instagram.com/adessconstruction?igsh=bWtiaGxrczJvdmtj'} target='_blank'>
+                        <InstagramIcon size={30} className='text-white hover:cursor-pointer'/>
+                    </Link>
+                    
                     <YoutubeIcon size={30} className='text-white hover:cursor-pointer'/>
                 </div>
                 <div>

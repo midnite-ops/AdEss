@@ -36,7 +36,6 @@ export default function page() {
   return (
     <div className=" w-full " >
         <div className="relative h-90 px-5 md:px-10 py-10 md:py-0 flex items-center ">
-        <Navbar isHero={true}/>
         {/* Background image */}
             <div
             className="absolute inset-0 bg-cover bg-center"

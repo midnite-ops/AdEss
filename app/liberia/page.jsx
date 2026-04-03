@@ -1,34 +1,15 @@
 import FAQ from "@/components/FAQ";
 import Navbar from "@/components/Navbar";
+import ServicesHighlight from "@/components/ServicesHighlight";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function LiberiaHome() {
-  const services = [
-    {
-      number: "01",
-      name: "Commercial Construction & Development",
-      description:
-        "Design and construction of infrastructure projects built for West Africa's growing economy.",
-    },
-    {
-      number: "02",
-      name: "Residential Projects from Conception to Completion",
-      description:
-        "Creating functional and aesthetically pleasing homes tailored to local needs.",
-    },
-    {
-      number: "03",
-      name: "Infrastructure & Industrial Construction",
-      description:
-        "Overseeing all aspects of construction projects from start to finish.",
-    },
-  ];
+  
 
   return (
     <main className="bg-white text-primary ">
-      <Navbar isHero={false} />
-
+      
       {/* ── HERO — full screen, left-aligned ── */}
       <section className="h-auto pt-30">
         <div className="mb-15">
@@ -99,7 +80,7 @@ export default function LiberiaHome() {
           </p>
           <Link
             href="/liberia/about"
-            className="border border-secondary text-secondary font-poppins font-medium text-sm tracking-widest uppercase px-8 py-3 w-fit hover:bg-secondary hover:text-white transition-colors mt-2"
+            className="border border-secondary text-secondary font-poppins font-medium text-sm tracking-widest uppercase px-8 py-3 w-fit hover:bg-secondary hover:text-black transition-colors mt-2"
           >
             Learn More
           </Link>
@@ -107,45 +88,7 @@ export default function LiberiaHome() {
       </section>
 
       {/* ── SERVICES — cards with orange number accent ── */}
-      <section className="bg-gray-50 px-6 md:px-16 py-24">
-        <div className="text-center mb-16">
-          <p className="text-secondary text-[10px] tracking-[5px] uppercase font-poppins mb-3">
-            Services
-          </p>
-          <h2 className="font-poppins font-bold text-primary text-4xl md:text-5xl leading-tight mb-4">
-            What We Build For You
-          </h2>
-          <p className="text-primary/60 text-base leading-relaxed max-w-xl mx-auto">
-            AdEss specializes in comprehensive construction services tailored
-            to your needs. We handle every phase with expertise and attention
-            to detail.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-primary/10">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`p-10 flex flex-col gap-5 hover:bg-secondary/5 transition-colors ${
-                index < services.length - 1
-                  ? "border-b md:border-b-0 md:border-r border-primary/10"
-                  : ""
-              }`}
-            >
-              <span className="font-poppins font-bold text-5xl text-secondary/20 leading-none">
-                {service.number}
-              </span>
-              <h3 className="font-poppins font-semibold text-primary text-lg leading-snug">
-                {service.name}
-              </h3>
-              <p className="text-primary/60 text-sm leading-relaxed flex-1">
-                {service.description}
-              </p>
-              <div className="w-8 h-0.5 bg-secondary" />
-            </div>
-          ))}
-        </div>
-      </section>
+      <ServicesHighlight />
 
       {/* ── CTA — full width dark band ── */}
       <section className="bg-primary px-6 md:px-16 py-24 relative overflow-hidden">

@@ -84,6 +84,9 @@
   .spacing{
     @apply py-16 px-5 md:px-10
   }
+  .edge-button{
+    @apply px-6 py-3 bg-black text-white font-poppins font-medium hover:bg-gray-800 cursor-pointer transition-colors 
+  }
 }
 
 :root {
