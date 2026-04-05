@@ -47,7 +47,7 @@ export default function Home() {
             </p>
           </div>
 
-          <Link href={'/contact'} className="mt-8 px-6 py-3 bg-white text-black font-poppins font-medium hover:bg-gray-200 cursor-pointer transition-colors ">Contact Us</Link>
+          <Link href={'/contact'} className="mt-8 px-6 py-3 bg-white text-black font-poppins font-medium hover:bg-gray-200 cursor-pointer transition-colors rounded-md">Contact Us</Link>
           
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function Home() {
               needs of our clients. Safety is our top priority—for both our team and our clients.
             </p>
             
-            <button className="mt-5 border py-2 px-5">
+            <button className="mt-5 border rounded-md py-2 px-5">
               <Link href={'/about'}>Learn More</Link>
             </button>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <h1 className="heading text-center mb-3">Ready to build something real?</h1>
           <p className="text-center">Let's talk about your project and what it needs to succeed</p>
-          <Link className="mt-5 border  py-2 px-5 bg-primary text-white" href={'/contact'}>Contact Us</Link>
+          <Link className="mt-5 border  py-2 px-5 bg-primary text-white rounded-md" href={'/contact'}>Contact Us</Link>
           
         </div>
         <div>

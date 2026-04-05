@@ -4,6 +4,8 @@ import Link from "next/link"
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { useSidebar } from "@/components/ui/sidebar"
+import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 import { 
   Sidebar,
   SidebarContent,
@@ -38,6 +40,37 @@ const menu = [
 
 export default function MobileSidebar() {
   const { toggleSidebar } = useSidebar()
+  const [country, setCountry] = useState(null)
+  const pathname = usePathname()
+
+  // Get cookie once
+  useEffect(() => {
+    const match = document.cookie.match(/(^| )preferred-country=([^;]+)/)
+    setCountry(match ? match[2] : "US")
+  }, [])
+
+  // Prevent render until country is known
+  if (!country) return null
+
+  // Determine current location and base path
+  const isOnLiberia = pathname.startsWith('/liberia')
+  const basePath = isOnLiberia ? "/liberia" : ""
+  const switchTo = isOnLiberia ? "US" : "LR"
+
+  // Switch country - SIMPLIFIED
+  const switchCountry = (target) => {
+    // Get the clean path (without /liberia)
+    let cleanPath = pathname.replace('/liberia', '') || '/'
+
+    // Build new path
+    const newPath = target === "LR" ? `/liberia${cleanPath}` : cleanPath
+
+    // Set cookie
+    document.cookie = `preferred-country=${target}; path=/; max-age=31536000`
+
+    // Navigate
+    window.location.href = newPath  // Use window.location for full reload
+  }
   return (
     <Sidebar className='z-100 '>
       <SidebarContent>
@@ -72,6 +105,11 @@ export default function MobileSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton onClick={() => switchCountry(switchTo)} className="mt-5 py-2 px-5 bg-primary text-white w-fit">
+                  Switch to {switchTo === "LR" ? "Liberia" : "US"}
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
