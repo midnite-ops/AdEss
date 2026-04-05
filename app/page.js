@@ -105,7 +105,7 @@ export default function Home() {
           
         </div>
         <div>
-          <Image src="/liberia/home/liberia-img-1.jpeg" alt="Contact Us" width={800} height={50} className="mt-10  rounded-md w-full" />
+          <Image src="/liberia/home/liberia-img-1.jpeg" alt="Contact Us" width={800} height={50} className="mt-10  rounded-md w-full h-100 md:h-200 object-cover" />
         </div>
       </section>
 

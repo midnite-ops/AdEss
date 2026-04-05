@@ -3,7 +3,6 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import MobileSidebar from "@/components/MobileSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-// import NavbarWrapper from "@/components/NavbarWrapper";
 import Navbar from "@/components/Navbar";
 // import CountryPrompt from "@/components/CountryPrompt";
 
