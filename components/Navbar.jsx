@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 
-export default function Navbar({ isHero = false }) {
+export default function Navbar() {
   const [country, setCountry] = useState(null)
   const router = useRouter()
   const pathname = usePathname()
