@@ -1,5 +1,7 @@
 "use client"
-import { Anchor, BadgeCheck, Contact, Home,  X } from 'lucide-react'
+import { X } from 'lucide-react'
+import Link from "next/link"
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { useSidebar } from "@/components/ui/sidebar"
 import { 
@@ -18,33 +20,38 @@ const menu = [
   {
     title: 'Home',
     url: '/',
-    icon: Home
   },
   {
     title: 'About Us',
     url: '/about',
-    icon: BadgeCheck
+    
   },
   {
     title: 'Our Services',
-    url: '/services',
-    icon: Anchor
+    url: '/services'
   },
   {
     title: 'Contact Us',
     url: '/contact',
-    icon: Contact
   }
 ]
 
 export default function MobileSidebar() {
   const { toggleSidebar } = useSidebar()
   return (
-    <Sidebar className='z-50'>
+    <Sidebar className='z-100 '>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel className='flex justify-between'>
-            AdEss
+        <SidebarGroup className="pt-5">
+          <SidebarGroupLabel className='flex justify-between mb-5'>
+            <Link href="/" >
+              <Image 
+                
+                src="/adess-logo-colored.png" 
+                width={80} 
+                height={80} 
+                alt="AdEss logo" 
+              />
+            </Link>
             <Button
               variant="ghost"
               size="icon"
@@ -60,8 +67,7 @@ export default function MobileSidebar() {
                 <SidebarMenuItem key={item.title} onClick={toggleSidebar}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
+                      <span className='text-base'>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

@@ -29,15 +29,15 @@ export default function page() {
     ]
   return (
     <main>
-        <section className=" h-screen spacing flex flex-col gap-10 lg:gap-0 lg:flex-row pt-0 ">
+        <section className="hero-spacing">
             <div className="flex flex-col gap-3 md:flex-1 items-start justify-start md:justify-center">
-                <h1 className="heading  md:max-w-10/12">Bulding what matters, done right</h1>
+                <h1 className="heading  md:max-w-10/12">Building what matters, done right</h1>
                 <p className="w-full md:w-3/4">We build structures that last. From foundation to finish, AdEss delivers quality construction with precision and integrity.</p>
                 <button className="mt-2 edge-button">
                     <Link href={'/contact'}>Get Started</Link>
                 </button>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 overflow-hidden">
                 <Image src={'/liberia/services/hero-bg.jpg'} width={500} height={500} alt="Growth mindset" className="w-full h-full object-cover"/>
             </div>
         </section>
@@ -96,9 +96,9 @@ export default function page() {
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/50" />
 
-            <div className="relative text-white flex flex-col gap-3 justify-center">
+            <div className="relative text-white flex flex-col gap-3 justify-center px-5 md:px-0 ">
                 <h1 className="text-center font-poppins font-bold text-4xl md:text-5xl leading-tight mb-4">Ready to build something great?</h1>
-                <p className="text-center w-10/12">Get in touch with our team today and let's discuss your next project. We're ready to turn your vision into solid reality.</p>
+                <p className="text-center w-full md:w-10/12">Get in touch with our team today and let's discuss your next project. We're ready to turn your vision into solid reality.</p>
                 <button className="mt-2 edge-button self-center bg-white text-black ">
                     <Link href={'/contact'}>Get in touch</Link>
                 </button>

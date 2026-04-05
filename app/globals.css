@@ -72,6 +72,9 @@
   .heading{
     @apply md:text-5xl font-semibold text-4xl leading-tight font-poppins 
   }
+  .hero-spacing{
+    @apply pt-10 md:pt-0 h-screen flex flex-col gap-10 lg:gap-0 lg:flex-row py-16 px-5 md:px-10
+  }
   .lib-heading{
     @apply font-semibold text-4xl leading-tight font-poppins 
   }
