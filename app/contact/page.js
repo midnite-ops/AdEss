@@ -105,13 +105,13 @@ export default function page() {
                 <p className="text-sm text-red-600 font-bold">{errors.email[0]}</p>
               )}
             </label>
-            <label htmlFor="password"  className="flex flex-col gap-3 ">
+            {/* <label htmlFor="password"  className="flex flex-col gap-3 ">
               Password
               <input type="text" name="password" onChange={handleChange} className="border rounded-sm border-black w-full py-3 px-4" placeholder="*********"/>
               {errors.password && (
                 <p className="text-sm text-red-600 font-bold">{errors.password[0]}</p>
               )}
-            </label>
+            </label> */}
 
             <label htmlFor="message" className="flex flex-col justify-end gap-3 ">
               Message

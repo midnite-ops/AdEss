@@ -18,33 +18,29 @@ const menu = [
   {
     title: 'Home',
     url: '/',
-    icon: Home
   },
   {
     title: 'About Us',
     url: '/about',
-    icon: BadgeCheck
+    
   },
   {
     title: 'Our Services',
-    url: '/services',
-    icon: Anchor
+    url: '/services'
   },
   {
     title: 'Contact Us',
     url: '/contact',
-    icon: Contact
   }
 ]
 
 export default function MobileSidebar() {
   const { toggleSidebar } = useSidebar()
   return (
-    <Sidebar className='z-50'>
+    <Sidebar className='z-100'>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className='flex justify-between'>
-            AdEss
+          <SidebarGroupLabel className='flex justify-end'>
             <Button
               variant="ghost"
               size="icon"
@@ -60,7 +56,6 @@ export default function MobileSidebar() {
                 <SidebarMenuItem key={item.title} onClick={toggleSidebar}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      <item.icon />
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
