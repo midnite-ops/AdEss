@@ -67,7 +67,7 @@ export default function Home() {
               specialize in a wide range of services, including civil and architectural engineering, construction
               and project management, environmental assessments, traffic analysis, monitoring and evaluation,
               and safety assessments. We also provide strategic consulting services tailored to meet the unique
-              needs of our clients. Safety is our top priority—for both our team and our clients.
+              needs of our clients. Safety is our top priority for both our team and our clients.
             </p>
             
             <button className="mt-5 border rounded-md py-2 px-5">
