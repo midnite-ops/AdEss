@@ -36,7 +36,7 @@ export default function Footer() {
                             <Image src="/Facebook-icon.svg" width={30} height={30} alt="facebook icon" />
                         </Link>
 
-                        <Link href={'https://www.instagram.com/adessconstruction?igsh=bWtiaGxrczJvdmtj'} target='_blank'>
+                        <Link href={'https://www.instagram.com/adessglobalconstruction?igsh=ZnE4dmQxMWQwZGU3'} target='_blank'>
                             <Image src="/instagram-icon.svg" width={25} height={25} alt="instagram icon" />
                         </Link>
                     </div>

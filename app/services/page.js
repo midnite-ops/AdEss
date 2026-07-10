@@ -31,6 +31,10 @@ export default function page() {
         {
             title: 'Traffic Analysis',
             items: ['Traffic Data Collection', 'Traffic Modeling and Simulation', 'Data Analytics and Reporting', 'Automated Traffic Solutions']
+        },
+        {
+            title: 'Project Management',
+            items: ['Project Planning and Coordination', 'Budget and Cost Control', 'Quality and Progress Monitoring']
         }
     ]
   return (
@@ -83,7 +87,7 @@ export default function page() {
                 <p className="md:w-2/5 w-full font-semibold">Let’s turn your vision into a solid, lasting structure. Contact our team today for a consultation and detailed project estimate.</p>
             </div>
             <div>
-                <Image src='/cta/img-1.jpeg' width={400} height={400} className="w-full h-full"/>
+                <Image src='/cta/img-1.jpeg' width={400} height={400} className="w-full h-full" alt="Construction image"/>
             </div>
         </div>
         

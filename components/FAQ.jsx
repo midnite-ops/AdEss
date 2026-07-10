@@ -8,7 +8,7 @@ function FAQ(){
         },
         {
             question: "Do you handle both small and large projects?",
-            answer: 'Yes. We work on projects of all sizes — from minor renovations and repairs to full-scale commercial and residential developments.'
+            answer: 'Yes. We work on projects of all sizes from minor renovations and repairs to full-scale commercial and residential developments.'
         },
         {
             question: "Are your projects handled by licensed professionals?",

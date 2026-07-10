@@ -1,47 +1,49 @@
 import Link from "next/link"
 import Image from "next/image"
 import ServicesHighlight from "@/components/ServicesHighlight"
+import { User, User2 } from "lucide-react"
+import CTA from "@/components/CTA"
 
 
 export default function LiberiaAbout() {
   const team = [
     {
-      name: 'Marcus Webb',
+      name: 'Adam Salifu Kamara',
       role: 'Founder & CEO',
-      desc: 'Marcus oversees every phase of construction with the discipline of a seasoned professional.',
-      img: '/liberia/about/profile.jpg'
+      desc: 'Adam oversees every phase of construction with the discipline of a seasoned professional.',
+      img: User
     },
     {
-      name: 'Sophia Turner',
+      name: 'Morrinah S. Kamara',
       role: 'Chief Operating Officer',
-      desc: 'Sophia ensures our projects run smoothly, on time, and within budget, with a focus on quality and client satisfaction.',
-      img: '/liberia/about/profile.jpg' 
+      desc: 'Morrinah ensures our projects run smoothly, on time, and within budget, with a focus on quality and client satisfaction.',
+      img: User
     },
     {
-      name: 'James Chen',
+      name: 'Alex T. Siryon',
       role: 'Structural Engineer',
-      desc: 'James brings technical expertise and innovative solutions to every project, ensuring structural integrity and safety.',
-      img: '/liberia/about/profile.jpg'
+      desc: 'Alex brings technical expertise and innovative solutions to every project, ensuring structural integrity and safety.',
+      img: User
     },
     {
-      name: 'Sarah Mitchell',
+      name: 'Alexander Collins',
       role: 'Site Supervisor',
-      desc: 'Sarah manages on-site operations with a keen eye for detail, ensuring that every aspect of construction meets our high standards.',
-      img: '/liberia/about/profile.jpg' 
+      desc: 'Alexander manages on-site operations with a keen eye for detail, ensuring that every aspect of construction meets our high standards.',
+      img: User
     }
   ]
   const records = [
     {
-      title: '150+',
+      title: '25+',
       desc: 'Projects Completed',
     },
     {
-      title: '20',
+      title: '15',
       desc: 'Years in business',
     },
     {
       title: '100%',
-      desc: 'Safety record maintained',
+      desc: 'Sucess Rates',
     },
   ]
   return (
@@ -55,7 +57,7 @@ export default function LiberiaAbout() {
               </button>
           </div>
           <div className="flex-1 overflow-hidden">
-              <Image src={'/liberia/about/hero-bg.jpg'} width={500} height={500} alt="Contact Us" className="w-full h-full object-cover "/>
+              <Image src={'/liberia/about/hero-bg copy.jpg'} width={500} height={500} alt="Contact Us" className="w-full h-full object-cover "/>
           </div>
       </section>
 
@@ -77,14 +79,14 @@ export default function LiberiaAbout() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {team.map((member, index) => (
             <div key={index} className=" text-white p-6 rounded-lg  flex flex-col items-center text-center gap-2">
-              <div className="w-20 h-20 mx-auto mb-2">
-                <Image src={member.img} width={200} height={200} alt={member.name} className="w-full h-full object-cover rounded-full" />
+              <div className="w-20 h-20 mx-auto mb-2 bg-gray-50 rounded-full flex justify-center items-center">
+                <member.img color="black" size={40}/>
               </div>
               <h3 className="font-poppins font-semibold text-xl">{member.name}</h3>
               <p className="text-lg font-medium mb-4">{member.role}</p>
               <p className="text-base leading-relaxed">{member.desc}</p>
 
-              <div className="flex items-center justify-center gap-2 mt-5">
+              {/* <div className="flex items-center justify-center gap-2 mt-5">
                 <a href="#" target="_blank">
                   <Image src={'/liberia/about/Linkedin-icon.svg'} width={20} height={20} alt="LinkedIn" className="w-5 h-5 object-contain"/>
                 </a>
@@ -97,7 +99,7 @@ export default function LiberiaAbout() {
                   <Image src={'/liberia/about/Facebook-icon.svg'} width={20} height={20} alt="LinkedIn" className="w-5 h-5 object-contain"/>
                 </a>
                 
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -109,7 +111,7 @@ export default function LiberiaAbout() {
             Two decades of building trust and structures 
           </h2>
           <p className="text-base leading-relaxed">
-            AdEss Construction has completed over 150 projects across residential and commercial sectors. Our safety record remains spotless, and our clients return again and again.          
+            AdEss Construction has completed over 25 projects across residential and commercial sectors. Our safety record remains spotless, and our clients return again and again.          
           </p>
         </div>
 
@@ -127,23 +129,7 @@ export default function LiberiaAbout() {
         </div>
       </section>
 
-      <section className="relative flex justify-center items-center h-100">
-        <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/liberia/services/framing.jpg')" }}
-        />
-
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
-
-          <div className="relative text-white flex flex-col gap-3 justify-center px-5 md:px-0 ">
-              <h1 className="text-center font-poppins font-bold text-4xl md:text-5xl leading-tight mb-4">Ready to build something great?</h1>
-              <p className="text-center w-full md:w-10/12">Get in touch with our team today and let's discuss your next project. We're ready to turn your vision into solid reality.</p>
-              <button className="mt-2 edge-button self-center bg-white text-black ">
-                  <Link href={'/contact'}>Get in touch</Link>
-              </button>
-        </div>
-      </section>
+      <CTA />
     </main>
   )
 }
