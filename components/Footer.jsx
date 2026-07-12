@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 export default function Footer() {
     const url = usePathname()
-    console.log(url)
   return (
     <footer className='padded bg-primary spacing text-white'>
         <div className='flex flex-col gap-20'>
