@@ -40,19 +40,19 @@ export default function page() {
       title: 'Email',
       icon: <Mail />,
       desc: 'Share your project details, questions, or plans with us via email. Our team will review your message carefully and respond with clear guidance, timelines, and next steps.',
-      contact: 'AdEssglobalconstruction@gmail.com'
+      contact: 'info@adessglobalconstruction.com'
     },
     {
       title: 'Call Us',
       icon: <Phone />,
       desc: 'Prefer a direct conversation? Give us a call to discuss your project, request an estimate, or speak with one of our experts for immediate assistance.',
-      contact: '123 Sample St, Sydney NSW 2000 AU',
+      contact: '11227 Burgus Farm Rd Humble, Tx 77346',
     },
     {
       title: 'Live Chat',
       icon: <MessageCircle />,
       desc: 'Need quick answers? Connect with us through live chat for real-time support and fast responses from our team.',
-      contact: '+1 (555) 000-0000'
+      contact: '+1470-624-1904'
     },
   ]
 

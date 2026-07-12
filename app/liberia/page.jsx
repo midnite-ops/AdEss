@@ -48,7 +48,7 @@ export default function LiberiaHome() {
         {/* Image */}
         <div className="relative min-h-[350px] md:min-h-0">
           <Image
-            src="/liberia/home/liberia-img-1.jpeg"
+            src="/liberia/home/construction.jpg"
             alt="AdEss Liberia Construction"
             fill
             className="object-cover"

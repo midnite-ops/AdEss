@@ -1,9 +1,8 @@
 "use client"
 import Image from 'next/image';
-import { FacebookIcon, InstagramIcon,YoutubeIcon } from 'lucide-react';
 import Link from 'next/link';
 export default function Footer() {
-
+    const url = window.location.pathname
   return (
     <footer className='padded bg-primary spacing text-white'>
         <div className='flex flex-col gap-20'>
@@ -13,7 +12,7 @@ export default function Footer() {
                         <Link href={'/'} >
                             <Image src="/adess-logo.png" width={100} height={100} alt="AdEss logo" />
                         </Link>
-                        <h2 className='font-poppins text-xl font-semibold'>AdEss Global Construction &amp; <br />Consultant Services, LLC</h2>
+                        <h2 className='font-poppins text-xl font-semibold'>AdEss Global Construction &amp; <br />Consultant Services, {url.includes('liberia') ? 'INC' : 'LLC'}</h2>
                     </div>
                     
                 </div>

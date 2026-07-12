@@ -11,30 +11,30 @@ export default function LiberiaAbout() {
       name: 'Adam Salifu Kamara',
       role: 'Founder & CEO',
       desc: 'Adam oversees every phase of construction with the discipline of a seasoned professional.',
-      img: User
+      img: '/brand-hat.jpg'
     },
     {
       name: 'Morrinah S. Kamara',
       role: 'Chief Operating Officer',
       desc: 'Morrinah ensures our projects run smoothly, on time, and within budget, with a focus on quality and client satisfaction.',
-      img: User
+      img: '/brand-hat.jpg'
     },
     {
       name: 'Alex T. Siryon',
       role: 'Structural Engineer',
       desc: 'Alex brings technical expertise and innovative solutions to every project, ensuring structural integrity and safety.',
-      img: User
+      img: '/brand-hat.jpg'
     },
     {
       name: 'Alexander Collins',
       role: 'Site Supervisor',
       desc: 'Alexander manages on-site operations with a keen eye for detail, ensuring that every aspect of construction meets our high standards.',
-      img: User
+      img: '/brand-hat.jpg'
     }
   ]
   const records = [
     {
-      title: '25+',
+      title: '15+',
       desc: 'Projects Completed',
     },
     {
@@ -79,8 +79,8 @@ export default function LiberiaAbout() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {team.map((member, index) => (
             <div key={index} className=" text-white p-6 rounded-lg  flex flex-col items-center text-center gap-2">
-              <div className="w-20 h-20 mx-auto mb-2 bg-gray-50 rounded-full flex justify-center items-center">
-                <member.img color="black" size={40}/>
+              <div className="w-20 h-20 mx-auto mb-2  rounded-full flex justify-center items-center">
+                <img src={member.img} className="bg-transparent"/>
               </div>
               <h3 className="font-poppins font-semibold text-xl">{member.name}</h3>
               <p className="text-lg font-medium mb-4">{member.role}</p>
@@ -108,7 +108,7 @@ export default function LiberiaAbout() {
       <section className="spacing">
         <div className= "flex flex-col md:flex-row justify-between gap-5 md:gap-25">
           <h2 className="font-poppins font-semibold text-primary text-4xl md:text-5xl leading-tight mb-4">
-            Two decades of building trust and structures 
+            15+ years of building trust and structures 
           </h2>
           <p className="text-base leading-relaxed">
             AdEss Construction has completed over 25 projects across residential and commercial sectors. Our safety record remains spotless, and our clients return again and again.          
