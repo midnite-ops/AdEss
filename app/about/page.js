@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { User } from "lucide-react";
+import Image from "next/image";
 import CTA from "@/components/CTA";
 
 export default function page() {
@@ -8,25 +9,25 @@ export default function page() {
       name: 'Adam Salifu Kamara',
       role: 'Founder & CEO',
       desc: 'Adam oversees every phase of construction with the discipline of a seasoned professional.',
-      img: User
+      img: '/brand-hat.jpg'
     },
     {
       name: 'Morrinah S. Kamara',
       role: 'Chief Operating Officer',
       desc: 'Morrinah ensures our projects run smoothly, on time, and within budget, with a focus on quality and client satisfaction.',
-      img: User
+      img: '/brand-hat.jpg'
     },
     {
       name: 'Alex T. Siryon',
       role: 'Structural Engineer',
       desc: 'Alex brings technical expertise and innovative solutions to every project, ensuring structural integrity and safety.',
-      img: User
+      img: '/brand-hat.jpg'
     },
     {
       name: 'Alexander Collins',
       role: 'Site Supervisor',
       desc: 'Alexander manages on-site operations with a keen eye for detail, ensuring that every aspect of construction meets our high standards.',
-      img: User
+      img: '/brand-hat.jpg'
     }
   ]
   return (
@@ -153,8 +154,8 @@ export default function page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {team.map((member, index) => (
             <div key={index} className=" p-6 rounded-lg  flex flex-col items-center text-center gap-2">
-              <div className="w-20 h-20 mx-auto mb-2 bg-gray-50 rounded-full flex justify-center items-center">
-                <member.img color="black" size={40}/>
+              <div className="w-20 h-20 mx-auto mb-2 rounded-full flex justify-center items-center">
+                <img src={member.img} className="bg-transparent"/>
               </div>
               <h3 className="font-poppins font-semibold text-xl">{member.name}</h3>
               <p className="text-lg font-medium mb-4">{member.role}</p>

@@ -62,7 +62,7 @@ export default function page() {
 
     const results = [
         {
-            number: '100+',
+            number: '25+',
             title: 'Projects Completed',
             description: 'A track record of successful projects across residential, commercial, and industrial sectors.'
         },
@@ -70,7 +70,7 @@ export default function page() {
             number: '95%',
             title: 'Years in business',
             img: '/liberia/contact/satisfaction.jpg',
-            description: 'Two decades of learning, improving, and earning trust one project at a time.'
+            description: '15+ years of learning, improving, and earning trust one project at a time.'
         },
         {
             number: '99%',
