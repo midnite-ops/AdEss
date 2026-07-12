@@ -186,3 +186,151 @@ export default function page() {
     </div>
   );
 }
+
+/**	
+a
+@
+15.197.225.128
+1 Hour
+
+
+
+
+
+
+a
+@
+216.198.79.1
+600 seconds
+
+
+
+
+a
+@
+3.33.251.168
+1 Hour
+
+
+
+
+
+
+ns
+@
+ns11.domaincontrol.com.
+1 Hour
+
+
+
+
+
+
+ns
+@
+ns12.domaincontrol.com.
+1 Hour
+
+
+
+
+
+
+cname
+pay
+paylinks.commerce.godaddy.com.
+1 Hour
+
+
+
+
+cname
+_domainconnect
+_domainconnect.gd.domaincontrol.com.
+1 Hour
+
+
+
+
+soa
+@
+Primary nameserver: ns11.domaincontrol.com.
+1 Hour
+
+
+
+
+
+mx
+@
+mx.zoho.com. (Priority: 10)
+600 seconds
+
+
+
+
+mx
+@
+mx2.zoho.com. (Priority: 20)
+600 seconds
+
+
+
+
+
+	
+mx
+@
+mx3.zoho.com. (Priority: 50)
+600 seconds
+
+
+
+
+txt
+@
+v=spf1 include:dc-8e814c8572._spfm.adessglobalconstruction.com include:dc-8e814c8572._spfm.adessglobalconstruction.com ~all
+1 Hour
+
+
+
+
+txt
+@
+zoho-verification=zb06504545.zmverify.zoho.com
+600 seconds
+
+
+
+
+txt
+dc-8e814c8572._spfm
+v=spf1 include:zohomail.com include:dc-8e814c8572._spfm.adessglobalconstruction.com ~all
+1 Hour
+
+
+
+
+txt
+dc-8e814c8572._spfm
+v=spf1 include:zohomail.com ~all
+1 Hour
+
+
+
+
+txt
+zmail._domainkey
+v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBNGexXpPkT64rKDXirxxJfbb19PTif4CXveOw/yAbUOxaAO+dHN1LjACz67yvf7YI6pBGModxhguXxOSkH52t54OjNG/qv3UTNEbezb8bJ9cYxS3PZiKJ2+bDUZorCwgV4e9hbcbBftWu/5GQtyodXu3Ax2v7qcwiifSufoPaWwIDAQAB
+600 seconds
+
+
+
+
+txt
+_dmarc
+v=DMARC1; p=none; rua=mailto:info@adessglobalconstruction.com; ruf=mailto:info@adessglobalconstruction.com; sp=none; adkim=r; aspf=r
+600 seconds
+
+
+these are the dns records, are there any emails connected or something important */

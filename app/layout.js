@@ -37,7 +37,7 @@ export const metadata = {
   openGraph: {
     title: "AdEss Construction",
     description: "Building excellence across regions",
-    url: "https://ad-ess.vercel.app",
+    url: "https://www.adessglobalconstruction.com",
     siteName: "AdEss",
     images: [
       {
