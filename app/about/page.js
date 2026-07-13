@@ -6,13 +6,13 @@ import CTA from "@/components/CTA";
 export default function page() {
   const team = [
     {
-      name: 'Adam Salifu Kamara',
+      name: 'Ing. Adam Salifu Kamara',
       role: 'Founder & CEO',
-      desc: 'Adam oversees every phase of construction with the discipline of a seasoned professional.',
+      desc: 'Adam oversees every phase of construction with the discipline of a seasoned Civil Engineer.',
       img: '/CEO.jpg'
     },
     {
-      name: 'Morrinah S. Kamara',
+      name: 'Morrinah S. Kamara - PMP',
       role: 'Chief Operating Officer',
       desc: 'Morrinah ensures our projects run smoothly, on time, and within budget, with a focus on quality and client satisfaction.',
       img: '/COO.jpg'
