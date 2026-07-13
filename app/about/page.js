@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { User } from "lucide-react";
-import Image from "next/image";
 import CTA from "@/components/CTA";
 
 export default function page() {
