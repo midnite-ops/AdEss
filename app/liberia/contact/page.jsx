@@ -179,10 +179,10 @@ export default function page() {
                 </p>
             </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10 h-fit">
+           <div className=" h-fit">
   
                 {/* LEFT — CARDS (smaller) */}
-                <div className="flex flex-col gap-6">
+                <div className="flex  gap-6">
                     {results.map((result, index) => (
                     <div
                         key={index}
@@ -203,15 +203,15 @@ export default function page() {
                     ))}
                 </div>
 
-                {/* RIGHT — BIG IMAGE */}
-                <div className="relative h-50 md:h-auto overflow-hidden ">
+                {/* RIGHT — BIG IMAGE
+                <div className="relative  h-50 md:h-auto overflow-hidden ">
                     <Image
                     src="/liberia/contact/results.jpeg"
                     alt="Contact Us"
                     fill
                     className="object-cover  md:h-auto"
                     />
-                </div>
+                </div> */}
 
             </div>
         </section>

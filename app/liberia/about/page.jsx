@@ -10,7 +10,7 @@ export default function LiberiaAbout() {
     {
       name: 'Ing. Adam Salifu Kamara',
       role: 'Founder & CEO',
-      desc: 'Adam oversees every phase of construction with the discipline of a seasoned professional.',
+      desc: 'Adam oversees every phase of construction with the discipline of a seasoned Civil Engineer.',
       img: '/CEO.jpg'
     },
     {
