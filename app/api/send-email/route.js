@@ -26,7 +26,7 @@ export async function POST(request) {
 
     // Send email to USER
     const { data, error } = await resend.emails.send({
-      from: 'AdEss Construction <onboarding@resend.dev>', // Use your verified domain or resend's test domain
+      from: 'AdEss Construction <info@adessglobalconstruction.com>', // Use your verified domain or resend's test domain
       to: [email], // User's email
       subject: 'Thank you for contacting AdEss',
       html: `
@@ -55,8 +55,8 @@ export async function POST(request) {
 
     // OPTIONAL: Send notification to YOUR company email
     await resend.emails.send({
-      from: 'AdEss Contact Form <onboarding@resend.dev>',
-      to: ['oyimsjesse4@gmail.com'], // Your business email
+      from: 'AdEss Contact Form <info@adessglobalconstruction.com>',
+      to: ['info@adessglobalconstruction.com'], // Your business email
       subject: `New Contact Form Submission from ${name || email}`,
       html: `
         <h2>New Contact Form Submission</h2>
