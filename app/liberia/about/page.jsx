@@ -20,9 +20,9 @@ export default function LiberiaAbout() {
       img: '/COO.jpg'
     },
     {
-      name: 'Alex T. Siryon',
+      name: 'Losene Kanneh',
       role: 'Structural Engineer',
-      desc: 'Alex brings technical expertise and innovative solutions to every project, ensuring structural integrity and safety.',
+      desc: 'Kanneh brings technical expertise and innovative solutions to every project, ensuring structural integrity and safety.',
       img: '/brand-hat.jpg'
     },
     {
