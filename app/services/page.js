@@ -50,7 +50,11 @@ export default function page() {
             <div className="absolute inset-0 bg-black/50 " />
 
             <div className="text-white relative z-20">
+                <p className="subheading uppercase text-sm text-gray-300">Our Expertise</p>
                 <h1 className="heading">Services</h1>
+                <p className="text-white/80">
+            From concept to completion, we deliver construction and engineering solutions <br />  designed around quality, precision and lasting value.
+          </p>
                 <button className=" mt-8 py-2 px-4 md:px-6 md:py-3 bg-white text-black font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors">
                     <Link href='/contact'>Contact Us</Link>
                     

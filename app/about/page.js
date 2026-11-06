@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import CTA from "@/components/CTA";
 
 export default function page() {
@@ -41,7 +42,11 @@ export default function page() {
         <div className="absolute inset-0 bg-black/50 " />
 
         <div className="text-white relative z-20">
+          <p className="subheading uppercase text-sm text-gray-300">Who we are</p>
           <h1 className="heading">ABOUT US</h1>
+          <p className="text-white/80">
+            AdEss is a leading engineering and construction company dedicated to delivering innovative <br /> solutions that drive progress and create value for our clients.
+          </p>
           <button className=" mt-8 py-2 px-4 md:px-6 md:py-3 bg-white text-black font-poppins font-medium rounded-md hover:bg-gray-200 cursor-pointer transition-colors">
             <Link href='/contact'>Contact Us</Link>
             
@@ -87,11 +92,7 @@ export default function page() {
           </div>
 
           <div className="mt-10">
-            <img
-              src="https://res.cloudinary.com/dwy1uczdm/image/upload/v1754561114/vision-image_fbiuid.svg"
-              alt="an image of a building"
-              loading="lazy" className="w-full"
-            />
+            <Image src='/about/building.jpg' width={500} height={500} loading="lazy" className="w-full h-100 object-cover" alt="Building image"/>
           </div>
         </div>
 
@@ -128,11 +129,7 @@ export default function page() {
           </div>
 
           <div className="mt-10">
-            <img
-              src="https://res.cloudinary.com/dwy1uczdm/image/upload/v1754561110/mission-image_ozd1gg.svg"
-              alt="an image of a building"
-              loading="lazy" className="w-full"
-            />
+            <Image src='/about/building-2.jpg' width={500} height={500} loading="lazy" className="w-full h-100 object-cover" alt="Building image"/>
           </div>
         </div>
         

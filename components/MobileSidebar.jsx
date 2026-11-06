@@ -33,6 +33,10 @@ const menu = [
     url: '/services'
   },
   {
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
     title: 'Contact Us',
     url: '/contact',
   }
